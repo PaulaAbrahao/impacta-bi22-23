@@ -44,7 +44,7 @@ with DAG('random_user_paula_2100063.py', schedule_interval='@daily', default_arg
     get_users = SimpleHttpOperator(
         task_id='get_users',
         http_conn_id='user_random_api',
-        endpoint='/api/?results=5000',
+        endpoint='/api/?results=1',
         method='GET',
         response_filter=lambda response: json.loads(response.text),
         log_response=True
